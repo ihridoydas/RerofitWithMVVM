@@ -1,10 +1,9 @@
-package com.hridoydas.retrofitwithmvvm
+package com.hridoydas.retrofitwithmvvm.network
 
-import retrofit2.Call
+import com.hridoydas.retrofitwithmvvm.network.response.GetCharacterByIdResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
-import java.sql.RowId
 
 interface RickAndMortyService {
 

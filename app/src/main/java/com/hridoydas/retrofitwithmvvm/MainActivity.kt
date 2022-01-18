@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.lifecycle.ViewModelProvider
+import com.hridoydas.retrofitwithmvvm.ViewModel.SharedViewModel
 import com.squareup.picasso.Picasso
 import retrofit2.*
 
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viewModel:SharedViewModel by lazy {
+        val viewModel: SharedViewModel by lazy {
 
             ViewModelProvider(this).get(SharedViewModel::class.java)
 
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         val genderImageView = findViewById<AppCompatImageView>(R.id.genderImageView)
 
 
-        viewModel.refreshCharacter(54)
+        viewModel.refreshCharacter(76)
         viewModel.characterByIdLiveData.observe(this){ response->
             if(response==null){
                 Toast.makeText(this@MainActivity,

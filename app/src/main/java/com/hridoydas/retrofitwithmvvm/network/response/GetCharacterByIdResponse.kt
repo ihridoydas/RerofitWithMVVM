@@ -1,4 +1,4 @@
-package com.hridoydas.retrofitwithmvvm
+package com.hridoydas.retrofitwithmvvm.network.response
 
 data class GetCharacterByIdResponse(
     val created: String = "",

@@ -1,9 +1,11 @@
-package com.hridoydas.retrofitwithmvvm
+package com.hridoydas.retrofitwithmvvm.ViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.hridoydas.retrofitwithmvvm.Repository.SharedRepository
+import com.hridoydas.retrofitwithmvvm.network.response.GetCharacterByIdResponse
 import kotlinx.coroutines.launch
 
 class SharedViewModel : ViewModel() {

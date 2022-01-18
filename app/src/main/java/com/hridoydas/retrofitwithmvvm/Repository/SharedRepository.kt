@@ -1,4 +1,7 @@
-package com.hridoydas.retrofitwithmvvm
+package com.hridoydas.retrofitwithmvvm.Repository
+
+import com.hridoydas.retrofitwithmvvm.network.NetworkLayer
+import com.hridoydas.retrofitwithmvvm.network.response.GetCharacterByIdResponse
 
 
 class SharedRepository {
