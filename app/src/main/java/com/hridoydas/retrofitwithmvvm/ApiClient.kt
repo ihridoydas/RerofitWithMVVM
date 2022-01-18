@@ -1,16 +1,26 @@
 package com.hridoydas.retrofitwithmvvm
 
 import retrofit2.Response
-import java.sql.RowId
+
 
 class ApiClient(
 
     private val rickAndMortyService: RickAndMortyService
 
 ) {
-    suspend fun getCharacterById(characterId: Int):Response<GetCharacterByIdResponse>{
+    suspend fun getCharacterById(characterId: Int):SimpleResponse<GetCharacterByIdResponse>{
 
-        return rickAndMortyService.getCheracterById(characterId)
+        return safeApiCall { rickAndMortyService.getCheracterById(characterId) }
+
+    }
+    private inline fun <T> safeApiCall(apiCall:()->Response<T>):SimpleResponse<T>{
+
+        return try {
+            SimpleResponse.success(apiCall.invoke())
+
+        }catch (e:Exception){
+            SimpleResponse.failure(e)
+        }
 
     }
 
